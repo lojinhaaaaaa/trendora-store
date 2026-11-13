@@ -1,65 +1,119 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Trendora curates useful tech gadgets, smart accessories and clever finds for everyday life.">
-  <meta name="theme-color" content="#111827">
-  <title>TRENDORA — Smart Finds. Better Living.</title>
-  <style>
-    :root{--ink:#111827;--muted:#667085;--line:#e8ebf0;--paper:#f7f8fa;--accent:#b9f36b;--white:#fff;--dark:#101827}
-    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--paper);color:var(--ink);font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
-    a{color:inherit;text-decoration:none}.topline{background:#101827;color:#dce2ec;text-align:center;padding:9px 16px;font-size:11px;letter-spacing:.12em;text-transform:uppercase}
-    header{background:#fff;border-bottom:1px solid var(--line);position:sticky;top:0;z-index:5}.nav{max-width:1160px;margin:auto;padding:19px 24px;display:flex;align-items:center;justify-content:space-between;gap:20px}.brand{font-size:23px;font-weight:900;letter-spacing:-1.3px}.brand span{color:#8bbd37}.tag{font-size:9px;letter-spacing:.19em;color:#7a8493;margin-top:2px}.navlinks{display:flex;gap:25px;font-size:13px;color:#4b5563}.navlinks a:hover{color:#111827}
-    .hero{max-width:1160px;margin:28px auto 0;padding:0 24px}.hero-inner{background:var(--dark);color:white;border-radius:25px;overflow:hidden;position:relative;padding:70px 7%;min-height:390px;display:flex;align-items:center}.hero-inner:after{content:"";position:absolute;width:390px;height:390px;border:1px solid #ffffff25;border-radius:50%;right:8%;top:4%;box-shadow:0 0 0 42px #ffffff08,0 0 0 84px #ffffff05}.hero-copy{position:relative;z-index:1;max-width:560px}.eyebrow{color:var(--accent);font-size:11px;letter-spacing:.2em;text-transform:uppercase;font-weight:700}.hero h1{font-size:clamp(42px,6vw,72px);line-height:.98;letter-spacing:-.065em;margin:18px 0}.hero p{color:#c4cbd5;line-height:1.7;max-width:440px;font-size:15px}.cta{display:inline-flex;margin-top:16px;background:var(--accent);color:#15200b;border-radius:999px;padding:13px 20px;font-size:12px;font-weight:800;letter-spacing:.04em}.hero-orb{position:absolute;right:15%;top:50%;transform:translateY(-50%);width:185px;height:185px;border-radius:48px;background:linear-gradient(145deg,#d6ff9a,#7cae40);box-shadow:0 25px 80px #0007;display:grid;place-items:center;font-size:88px;rotate:12deg;z-index:1}
-    main{max-width:1160px;margin:0 auto;padding:55px 24px 70px}.section-head{display:flex;align-items:end;justify-content:space-between;gap:20px;margin-bottom:22px}.kicker{font-size:10px;text-transform:uppercase;letter-spacing:.18em;color:#7b8794;font-weight:800}.section-head h2{font-size:30px;letter-spacing:-.045em;margin:7px 0 0}.section-head p{font-size:13px;color:var(--muted);margin:0;max-width:390px;line-height:1.6}.filters{display:flex;flex-wrap:wrap;gap:9px;margin:25px 0}.filter{border:1px solid #dfe3e8;background:#fff;color:#525d6b;border-radius:999px;padding:9px 15px;font:inherit;font-size:11px;cursor:pointer}.filter.active,.filter:hover{background:#111827;color:#fff;border-color:#111827}
-    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:17px}.card{background:#fff;border:1px solid var(--line);border-radius:18px;overflow:hidden;transition:transform .2s,box-shadow .2s}.card:hover{transform:translateY(-4px);box-shadow:0 15px 35px #1d293914}.visual{height:190px;display:grid;place-items:center;position:relative;background:linear-gradient(145deg,#edf1f5,#f8fafc)}.visual .emoji{font-size:68px;filter:drop-shadow(0 14px 12px #17203322)}.visual .pill{position:absolute;left:14px;top:14px;background:#fff;border:1px solid #e7eaf0;border-radius:999px;padding:6px 9px;font-size:9px;letter-spacing:.09em;text-transform:uppercase;font-weight:800;color:#4b5563}.card-body{padding:18px}.meta{font-size:10px;color:#8a94a3;text-transform:uppercase;letter-spacing:.12em;font-weight:800}.card h3{font-size:17px;line-height:1.3;letter-spacing:-.025em;margin:8px 0}.card p{font-size:12px;color:#697586;line-height:1.6;min-height:39px;margin:0 0 16px}.shop{display:flex;justify-content:space-between;align-items:center;border-top:1px solid #eef0f3;padding-top:13px;font-size:11px;font-weight:800}.shop span:last-child{font-size:17px}.shop:hover{color:#658c26}
-    .note{background:#f0f4e9;border:1px solid #e1e9d3;border-radius:15px;padding:16px 18px;color:#536044;font-size:12px;line-height:1.65;margin:28px 0}.note strong{color:#29371b}.editorial{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:55px}.editorial article{background:#fff;border:1px solid var(--line);border-radius:18px;padding:25px}.editorial h3{font-size:19px;letter-spacing:-.03em;margin:8px 0}.editorial p{font-size:13px;color:var(--muted);line-height:1.7;margin:0}.footer{background:#101827;color:#c4cbd5;padding:35px 24px}.footer-inner{max-width:1160px;margin:auto;display:flex;justify-content:space-between;gap:30px;flex-wrap:wrap}.footer strong{color:#fff}.footer p{font-size:11px;line-height:1.7;max-width:650px}.footer a{text-decoration:underline;text-underline-offset:3px}.small{font-size:10px;color:#8e9aaa}
-    @media(max-width:760px){.nav{padding:16px 18px}.navlinks{gap:12px;font-size:11px}.hero{padding:0 14px}.hero-inner{padding:48px 27px;min-height:370px}.hero-orb{right:7%;top:75%;width:95px;height:95px;font-size:43px;border-radius:26px;opacity:.9}.hero h1{font-size:48px}.hero p{max-width:340px}.hero-inner:after{right:-15%;top:35%}main{padding:42px 16px 55px}.grid{grid-template-columns:repeat(2,1fr);gap:11px}.visual{height:145px}.visual .emoji{font-size:52px}.card-body{padding:13px}.card h3{font-size:14px}.card p{font-size:11px;min-height:55px}.section-head{display:block}.section-head p{margin-top:10px}.editorial{grid-template-columns:1fr}.brand{font-size:20px}}
-    @media(max-width:420px){.navlinks a:nth-child(2){display:none}.grid{grid-template-columns:1fr}.visual{height:175px}.card p{min-height:0}.hero h1{font-size:43px}}
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="TRENDORA — trending finds and everyday favorites across beauty, home, tech, pets and fitness.">
+<meta name="theme-color" content="#fff7fb">
+<title>TRENDORA — Trending Finds. Everyday Favorites.</title>
+<style>
+:root{--ink:#24213a;--muted:#77758b;--pink:#ff6fae;--pink2:#ffe0ee;--lilac:#a98bff;--blue:#8ddcf5;--mint:#b8efd9;--yellow:#ffe59a;--paper:#fff9fc;--white:#fff;--line:#f0e8f0;--shadow:0 14px 40px rgba(72,44,90,.09)}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--paper);color:var(--ink);font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+a{color:inherit;text-decoration:none}.announcement{background:linear-gradient(90deg,#f9a4ca,#b39aff,#83d9ed);color:#302444;text-align:center;padding:10px 15px;font-size:11px;font-weight:800;letter-spacing:1.5px;text-transform:uppercase}
+header{position:sticky;top:0;z-index:20;background:rgba(255,255,255,.92);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+.nav{max-width:1200px;margin:auto;padding:17px 24px;display:flex;align-items:center;justify-content:space-between;gap:18px}
+.logo{font-size:27px;font-weight:1000;letter-spacing:-1.8px}.logo .o{color:var(--pink)}.tagline{font-size:9px;letter-spacing:2.7px;color:#9991a8;font-weight:800;margin-top:1px}
+.navlinks{display:flex;gap:24px;font-size:13px;font-weight:700;color:#615d73}.navlinks a:hover{color:#ed5b9d}
+.hero-wrap{max-width:1200px;margin:28px auto 0;padding:0 24px}
+.hero{min-height:420px;border-radius:32px;overflow:hidden;position:relative;padding:65px 7%;display:flex;align-items:center;background:linear-gradient(115deg,#ffe1ef 0%,#e8ddff 48%,#d8f6fb 100%)}
+.hero:before{content:"";position:absolute;width:420px;height:420px;border-radius:50%;background:#fff8;right:7%;top:-115px}
+.hero:after{content:"";position:absolute;width:260px;height:260px;border-radius:50%;background:#ffb4d1aa;right:18%;bottom:-165px}
+.hero-copy{position:relative;z-index:2;max-width:570px}
+.eyebrow{font-size:11px;letter-spacing:3px;text-transform:uppercase;font-weight:900;color:#a34d82}
+.hero h1{font-size:clamp(45px,7vw,78px);line-height:.94;letter-spacing:-4px;margin:17px 0 16px;color:#28213d}
+.hero p{font-size:16px;line-height:1.7;color:#5f5871;max-width:490px;margin:0}
+.button{display:inline-flex;margin-top:24px;background:#28213d;color:white;padding:14px 23px;border-radius:999px;font-size:12px;font-weight:900;letter-spacing:.7px;box-shadow:0 8px 18px #34264a24}
+.button:hover{transform:translateY(-2px);background:#ed5b9d}
+.hero-art{position:absolute;right:9%;top:50%;transform:translateY(-50%);z-index:1;width:290px;height:290px;border-radius:44% 56% 58% 42%;background:linear-gradient(145deg,#fff,#fce9f2);box-shadow:0 25px 55px #8d5d8b2a;display:grid;place-items:center;font-size:112px;rotate:8deg}
+.hero-art span{rotate:-8deg}
+main{max-width:1200px;margin:auto;padding:55px 24px 75px}
+.section-top{display:flex;justify-content:space-between;align-items:end;gap:20px;margin-bottom:22px}
+.kicker{font-size:10px;letter-spacing:3px;color:#b0789a;font-weight:900;text-transform:uppercase}
+h2{font-size:clamp(29px,4vw,42px);letter-spacing:-1.7px;margin:7px 0 0}
+.section-top p{max-width:410px;color:var(--muted);font-size:13px;line-height:1.65;margin:0}
+.filters{display:flex;flex-wrap:wrap;gap:9px;margin:24px 0 27px}
+.filter{border:1px solid #eadfe9;background:white;color:#6d657b;padding:10px 16px;border-radius:999px;font:inherit;font-size:11px;font-weight:800;cursor:pointer;transition:.2s}
+.filter:hover,.filter.active{background:#29223e;color:white;border-color:#29223e}
+.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:19px}
+.card{background:white;border:1px solid var(--line);border-radius:22px;overflow:hidden;box-shadow:0 5px 18px rgba(72,44,90,.035);display:flex;flex-direction:column;transition:.22s}
+.card:hover{transform:translateY(-5px);box-shadow:var(--shadow)}
+.product-art{height:178px;display:grid;place-items:center;position:relative;overflow:hidden}
+.product-art:before{content:"";position:absolute;width:175px;height:175px;border-radius:50%;background:#ffffff80;right:-38px;top:-70px}
+.product-art .emoji{font-size:76px;position:relative;z-index:1;filter:drop-shadow(0 12px 10px #34264a20)}
+.product-art .label{position:absolute;z-index:2;left:14px;top:13px;background:#ffffffdc;border-radius:999px;padding:6px 10px;font-size:9px;font-weight:900;letter-spacing:1px;text-transform:uppercase;color:#61566f}
+.pinkbg{background:linear-gradient(135deg,#ffe1ee,#ffd0df)}.lilacbg{background:linear-gradient(135deg,#eee6ff,#d9caff)}.bluebg{background:linear-gradient(135deg,#e0f8ff,#bcecf8)}.mintbg{background:linear-gradient(135deg,#e1f8ed,#bcebd8)}.yellowbg{background:linear-gradient(135deg,#fff4ce,#ffe39a)}
+.card-body{padding:17px 18px 18px;display:flex;flex-direction:column;flex:1}
+.category{font-size:9px;letter-spacing:1.7px;text-transform:uppercase;color:#a47b9b;font-weight:900}
+.card h3{font-size:17px;line-height:1.25;letter-spacing:-.35px;margin:8px 0}
+.card p{font-size:12px;line-height:1.6;color:#77758b;margin:0 0 17px;flex:1}
+.shop{display:flex;align-items:center;justify-content:space-between;background:#f8f2f8;border-radius:12px;padding:12px 13px;color:#554264;font-size:11px;font-weight:900}
+.shop:hover{background:#29223e;color:#fff}.shop b{font-size:17px}
+.note{margin:32px 0 0;background:#fff2f8;border:1px solid #f6d9e8;padding:17px 20px;border-radius:16px;color:#75576c;font-size:11px;line-height:1.7}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:52px}
+.about{border-radius:22px;padding:25px;background:white;border:1px solid var(--line)}
+.about:nth-child(1){background:linear-gradient(135deg,#f4edff,#fff)}.about:nth-child(2){background:linear-gradient(135deg,#eafaff,#fff)}
+.about h3{font-size:20px;margin:8px 0}.about p{font-size:12px;line-height:1.7;color:#77758b;margin:0}
+footer{background:#29223e;color:#fff;padding:34px 24px}.foot{max-width:1200px;margin:auto;display:flex;justify-content:space-between;gap:25px;flex-wrap:wrap}.foot p{font-size:10px;line-height:1.7;color:#d3cddd;max-width:680px}.foot small{font-size:10px;color:#a9a1b7}
+.hidden{display:none!important}
+@media(max-width:800px){.grid{grid-template-columns:repeat(2,minmax(0,1fr))}.hero-art{right:5%;width:205px;height:205px;font-size:78px;opacity:.85}.hero-copy{max-width:65%}.navlinks{gap:13px}}
+@media(max-width:560px){.nav{padding:14px 16px}.logo{font-size:22px}.navlinks{font-size:10px;gap:10px}.navlinks a:last-child{display:none}.hero-wrap{padding:0 13px;margin-top:16px}.hero{min-height:410px;padding:39px 24px;border-radius:24px;align-items:flex-start}.hero-copy{max-width:100%}.hero h1{font-size:48px;letter-spacing:-2.8px}.hero p{font-size:14px;max-width:290px}.hero-art{width:125px;height:125px;font-size:52px;right:8%;top:auto;bottom:10px;transform:none;opacity:.8}
+main{padding:42px 14px 55px}.section-top{display:block}.section-top p{margin-top:10px}.grid{gap:10px}.product-art{height:132px}.product-art .emoji{font-size:53px}.card-body{padding:13px}.card h3{font-size:14px}.card p{font-size:11px;line-height:1.5}.shop{font-size:10px;padding:10px}.about-grid{grid-template-columns:1fr}.filters{gap:7px}.filter{padding:9px 12px;font-size:10px}}
+</style>
 </head>
 <body>
-  <div class="topline">Curated tech finds for everyday life</div>
-  <header><nav class="nav" aria-label="Main navigation">
-    <a href="#home"><div class="brand">TREN<span>D</span>ORA</div><div class="tag">SMART FINDS. BETTER LIVING.</div></a>
-    <div class="navlinks"><a href="#discover">Discover</a><a href="#about">About</a><a href="#disclosure">Disclosure</a></div>
-  </nav></header>
-  <section class="hero" id="home"><div class="hero-inner">
-    <div class="hero-copy"><div class="eyebrow">Good tech, thoughtfully found</div><h1>Small upgrades.<br>Smarter days.</h1><p>Useful gadgets, clever accessories and tech that makes everyday life a little easier. Discover our latest curated finds.</p><a class="cta" href="#discover">EXPLORE THE FINDS&nbsp; ↗</a></div>
-    <div class="hero-orb" aria-hidden="true">⌁</div>
-  </div></section>
-  <main>
-    <section id="discover">
-      <div class="section-head"><div><div class="kicker">The edit</div><h2>Worth a closer look.</h2></div><p>A considered shortlist of practical tech picks. Product details and retailer prices can change, so always check the store before buying.</p></div>
-      <div class="filters" role="group" aria-label="Filter products">
-        <button class="filter active" data-filter="all">All finds</button><button class="filter" data-filter="audio">Audio</button><button class="filter" data-filter="power">Power & charging</button><button class="filter" data-filter="desk">Desk & everyday</button>
-      </div>
-      <div class="grid" id="product-grid">
-        <article class="card" data-category="audio"><div class="visual"><span class="pill">Audio pick</span><span class="emoji">🎧</span></div><div class="card-body"><div class="meta">Wireless audio · Soundcore</div><h3>Soundcore P30i Noise-Cancelling Earbuds</h3><p>A compact everyday listening option with noise cancelling and a case that doubles as a phone stand.</p><a class="shop" href="https://www.bestbuy.com/product/soundcore-by-anker-p30i-true-wireless-noise-cancelling-earbuds-black/JJ858RCF2L/sku/12693430" target="_blank" rel="noopener noreferrer"><span>Check retailer listing</span><span>↗</span></a></div></article>
-        <article class="card" data-category="power"><div class="visual"><span class="pill">Travel essential</span><span class="emoji">🔋</span></div><div class="card-body"><div class="meta">Portable power · Anker</div><h3>Anker 10K Power Bank</h3><p>A pocket-friendly backup battery with a built-in USB-C cable for charging while you are out.</p><a class="shop" href="https://www.bestbuy.com/product/anker-power-bank-10k-22-5w-built-in-usb-c-cable-black/JJ858RLKLP/sku/6643854" target="_blank" rel="noopener noreferrer"><span>Check retailer listing</span><span>↗</span></a></div></article>
-        <article class="card" data-category="power"><div class="visual"><span class="pill">Desk upgrade</span><span class="emoji">⚡</span></div><div class="card-body"><div class="meta">Wireless charging · Anker</div><h3>Anker Prime 3-in-1 Wireless Charger</h3><p>A foldable charging station designed to power a phone, watch and earbuds in one compact spot.</p><a class="shop" href="https://us.anker.com/products/a25n1-anker-prime-qi2-25w-foldable-3-in-1-wireless-charger" target="_blank" rel="noopener noreferrer"><span>Check retailer listing</span><span>↗</span></a></div></article>
-        <article class="card" data-category="power"><div class="visual"><span class="pill">Workspace pick</span><span class="emoji">🔌</span></div><div class="card-body"><div class="meta">Charging hub · Monster</div><h3>Monster 10-in-1 Charging Sphere</h3><p>A desktop charging hub with multiple outlets and USB ports to help keep everyday devices together.</p><a class="shop" href="https://www.target.com/p/monster-10-in-1-charging-sphere-desktop-charging-station-with-qi2-magnetic-wireless-charging-3-ac-outlets-2-usb-c-usb-a/-/A-1009627819" target="_blank" rel="noopener noreferrer"><span>Check retailer listing</span><span>↗</span></a></div></article>
-        <article class="card" data-category="desk"><div class="visual"><span class="pill">Desk essential</span><span class="emoji">📱</span></div><div class="card-body"><div class="meta">Phone mount · Quad Lock</div><h3>Quad Lock Home & Office Desk Mount</h3><p>A reusable desk mount for keeping your phone visible while working, studying or taking calls.</p><a class="shop" href="https://www.quadlockcase.com/products/home-office-desk-mount" target="_blank" rel="noopener noreferrer"><span>Check retailer listing</span><span>↗</span></a></div></article>
-        <article class="card" data-category="audio"><div class="visual"><span class="pill">Everyday audio</span><span class="emoji">🎵</span></div><div class="card-body"><div class="meta">Wireless earbuds · Soundcore</div><h3>Soundcore P40i Earbuds</h3><p>Wireless earbuds with adaptive noise cancelling and a multi-use charging case.</p><a class="shop" href="https://us.soundcore.com/products/p40i-a3955011" target="_blank" rel="noopener noreferrer"><span>Check retailer listing</span><span>↗</span></a></div></article>
-      </div>
-      <div class="note"><strong>Launch note:</strong> This is the first visual version of Trendora. These buttons currently open ordinary retailer product pages, not affiliate tracking links. No commission is earned from these preview links. Replace each destination with your approved affiliate link before promoting the store as an affiliate shop.</div>
-    </section>
-    <section class="editorial" id="about">
-      <article><div class="kicker">Our point of view</div><h3>Useful over complicated.</h3><p>Trendora is a curated guide to gadgets that solve small everyday problems. We focus on practical features, clear descriptions and products worth comparing—not just what is viral.</p></article>
-      <article id="disclosure"><div class="kicker">Affiliate disclosure</div><h3>How this shop may earn.</h3><p>Trendora may earn a commission when visitors purchase through qualifying affiliate links, at no extra cost to the customer. Affiliate relationships will be clearly identified. At this preview stage, the retailer buttons are standard shopping links and are not monetized.</p></article>
-    </section>
-  </main>
-  <footer class="footer"><div class="footer-inner"><div><strong>TRENDORA</strong><div class="small">SMART FINDS. BETTER LIVING.</div></div><div><p>Product names, features, availability and prices belong to their respective retailers and may change. Always confirm compatibility, specifications, shipping and return terms with the retailer before purchasing.</p><p class="small">© 2026 Trendora · Independent product discovery site. Not affiliated with or endorsed by the brands shown.</p></div></div></footer>
-  <script>
-    const filterButtons = document.querySelectorAll('.filter');
-    const cards = document.querySelectorAll('.card');
-    filterButtons.forEach(button => button.addEventListener('click', () => {
-      filterButtons.forEach(item => item.classList.remove('active'));
-      button.classList.add('active');
-      const selected = button.dataset.filter;
-      cards.forEach(card => { card.hidden = selected !== 'all' && card.dataset.category !== selected; });
-    }));
-  </script>
+<div class="announcement">TRENDING FINDS · EVERYDAY FAVORITES · LITTLE THINGS THAT MAKE LIFE BETTER</div>
+<header><nav class="nav">
+<a href="#home"><div class="logo">TREN<span class="o">D</span>ORA</div><div class="tagline">TRENDING FINDS. EVERYDAY FAVORITES.</div></a>
+<div class="navlinks"><a href="#discover">Shop finds</a><a href="#about">Our story</a><a href="#disclosure">Disclosure</a></div>
+</nav></header>
+<section class="hero-wrap" id="home"><div class="hero">
+<div class="hero-copy"><div class="eyebrow">A little something for every day</div><h1>Find your<br>new favorite.</h1>
+<p>Fresh finds for beauty lovers, cozy homes, tech fans, happy pets and active days. Discover products people are shopping for right now.</p>
+<a class="button" href="#discover">EXPLORE TRENDORA&nbsp; ↗</a></div>
+<div class="hero-art" aria-hidden="true"><span>🛍️</span></div>
+</div></section>
+<main>
+<section id="discover">
+<div class="section-top"><div><div class="kicker">THE TRENDORA EDIT</div><h2>Popular picks, lovely finds.</h2></div><p>Explore our five favorite categories. Tap a product to see current Amazon listings, prices and availability.</p></div>
+<div class="filters" role="group" aria-label="Filter products">
+<button class="filter active" data-filter="all">All finds</button><button class="filter" data-filter="beauty">Beauty</button><button class="filter" data-filter="home">Home</button><button class="filter" data-filter="tech">Tech</button><button class="filter" data-filter="pet">Pets</button><button class="filter" data-filter="fitness">Fitness</button>
+</div>
+<div class="grid" id="products">
+<article class="card" data-cat="beauty"><div class="product-art pinkbg"><span class="label">Beauty favorite</span><span class="emoji">💗</span></div><div class="card-body"><div class="category">Beauty & self-care</div><h3>Mighty Patch Original</h3><p>Hydrocolloid patches for a simple, targeted skincare routine.</p><a class="shop" href="https://www.amazon.com/s?k=Mighty+Patch+Original&tag=trendora20205-20" target="_blank" rel="sponsored nofollow noopener">SHOP ON AMAZON <b>↗</b></a></div></article>
+<article class="card" data-cat="beauty"><div class="product-art lilacbg"><span class="label">Daily skincare</span><span class="emoji">🧴</span></div><div class="card-body"><div class="category">Beauty & self-care</div><h3>CeraVe Moisturizing Cream</h3><p>A rich, everyday moisturizer for face and body.</p><a class="shop" href="https://www.amazon.com/s?k=CeraVe+Moisturizing+Cream&tag=trendora20205-20" target="_blank" rel="sponsored nofollow noopener">SHOP ON AMAZON <b>↗</b></a></div></article>
+<article class="card" data-cat="beauty"><div class="product-art bluebg"><span class="label">Beauty treat</span><span class="emoji">💋</span></div><div class="card-body"><div class="category">Beauty & self-care</div><h3>LANEIGE Lip Sleeping Mask</h3><p>An overnight lip-care favorite for a soft, hydrated feel.</p><a class="shop" href="https://www.amazon.com/s?k=Laneige+Lip+Sleeping+Mask&tag=trendora20205-20" target="_blank" rel="sponsored nofollow noopener">SHOP ON AMAZON <b>↗</b></a></div></article>
+
+<article class="card" data-cat="home"><div class="product-art yellowbg"><span class="label">Home favorite</span><span class="emoji">🥤</span></div><div class="card-body"><div class="category">Home & kitchen</div><h3>HydroJug Traveler</h3><p>A roomy insulated tumbler for water on the go.</p><a class="shop" href="https://www.amazon.com/s?k=HydroJug+Traveler&tag=trendora20205-20" target="_blank" rel="sponsored nofollow noopener">SHOP ON AMAZON <b>↗</b></a></div></article>
+<article class="card" data-cat="home"><div class="product-art pinkbg"><span class="label">Cozy home</span><span class="emoji">🕯️</span></div><div class="card-body"><div class="category">Home & kitchen</div><h3>Candle Warmer Lamp</h3><p>A decorative lamp designed to warm jar candles without an open flame.</p><a class="shop" href="https://www.amazon.com/s?k=candle+warmer+lamp&tag=trendora20205-20" target="_blank" rel="sponsored nofollow noopener">SHOP ON AMAZON <b>↗</b></a></div></article>
+<article class="card" data-cat="home"><div class="product-art mintbg"><span class="label">Fresh space</span><span class="emoji">💧</span></div><div class="card-body"><div class="category">Home & kitchen</div><h3>LEVOIT Humidifier</h3><p>A home humidifier option for bedrooms and everyday comfort.</p><a class="shop" href="https://www.amazon.com/s?k=Levoit+humidifier&tag=trendora20205-20" target="_blank" rel="sponsored nofollow noopener">SHOP ON AMAZON <b>↗</b></a></div></article>
+
+<article class="card" data-cat="tech"><div class="product-art bluebg"><span class="label">Tech pick</span><span class="emoji">📍</span></div><div class="card-body"><div class="category">Tech & electronics</div><h3>Apple AirTag (2nd Gen)</h3><p>A compact item tracker to help keep tabs on everyday belongings.</p><a class="shop" href="https://www.amazon.com/s?k=Apple+AirTag+2nd+generation&tag=trendora20205-20" target="_blank" rel="sponsored nofollow noopener">SHOP ON AMAZON <b>↗</b></a></div></article>
+<article class="card" data-cat="tech"><div class="product-art lilacbg"><span class="label">Streaming favorite</span><span class="emoji">📺</span></div><div class="card-body"><div class="category">Tech & electronics</div><h3>Fire TV Stick 4K Max</h3><p>A streaming device for compatible TVs and home entertainment.</p><a class="shop" href="https://www.amazon.com/s?k=Fire+TV+Stick+4K+Max&tag=trendora20205-20" target="_blank" rel="sponsored nofollow noopener">SHOP ON AMAZON <b>↗</b></a></div></article>
+<article class="card" data-cat="tech"><div class="product-art pinkbg"><span class="label">Audio favorite</span><span class="emoji">🎧</span></div><div class="card-body"><div class="category">Tech & electronics</div><h3>Apple AirPods Pro</h3><p>Wireless earbuds with active noise cancellation and a compact case.</p><a class="shop" href="https://www.amazon.com/s?k=Apple+AirPods+Pro&tag=trendora20205-20" target="_blank" rel="sponsored nofollow noopener">SHOP ON AMAZON <b>↗</b></a></div></article>
+
+<article class="card" data-cat="pet"><div class="product-art mintbg"><span class="label">Cat favorite</span><span class="emoji">🐱</span></div><div class="card-body"><div class="category">Pet favorites</div><h3>Dr. Elsey's Cat Litter</h3><p>Cat litter designed for everyday litter-box care.</p><a class="shop" href="https://www.amazon.com/s?k=Dr+Elseys+cat+litter&tag=trendora20205-20" target="_blank" rel="sponsored nofollow noopener">SHOP ON AMAZON <b>↗</b></a></div></article>
+<article class="card" data-cat="pet"><div class="product-art yellowbg"><span class="label">Treat time</span><span class="emoji">🐾</span></div><div class="card-body"><div class="category">Pet favorites</div><h3>INABA Churu Cat Treats</h3><p>Creamy lickable treats that make snack time special.</p><a class="shop" href="https://www.amazon.com/s?k=INABA+Churu+cat+treats&tag=trendora20205-20" target="_blank" rel="sponsored nofollow noopener">SHOP ON AMAZON <b>↗</b></a></div></article>
+<article class="card" data-cat="pet"><div class="product-art pinkbg"><span class="label">Playtime</span><span class="emoji">🎾</span></div><div class="card-body"><div class="category">Pet favorites</div><h3>Spiky Ball Dog Toys</h3><p>A colorful toy option for interactive play and enrichment.</p><a class="shop" href="https://www.amazon.com/s?k=spiky+ball+dog+toys&tag=trendora20205-20" target="_blank" rel="sponsored nofollow noopener">SHOP ON AMAZON <b>↗</b></a></div></article>
+
+<article class="card" data-cat="fitness"><div class="product-art lilacbg"><span class="label">Workout pick</span><span class="emoji">💪</span></div><div class="card-body"><div class="category">Fitness & lifestyle</div><h3>Fit Simplify Resistance Bands</h3><p>A versatile loop-band set for warm-ups and home workouts.</p><a class="shop" href="https://www.amazon.com/s?k=Fit+Simplify+Resistance+Bands&tag=trendora20205-20" target="_blank" rel="sponsored nofollow noopener">SHOP ON AMAZON <b>↗</b></a></div></article>
+<article class="card" data-cat="fitness"><div class="product-art bluebg"><span class="label">Move & stretch</span><span class="emoji">🧘</span></div><div class="card-body"><div class="category">Fitness & lifestyle</div><h3>Amazon Basics Yoga Mat</h3><p>A cushioned mat option for stretching, yoga and floor workouts.</p><a class="shop" href="https://www.amazon.com/s?k=Amazon+Basics+Yoga+Mat&tag=trendora20205-20" target="_blank" rel="sponsored nofollow noopener">SHOP ON AMAZON <b>↗</b></a></div></article>
+<article class="card" data-cat="fitness"><div class="product-art mintbg"><span class="label">Strength training</span><span class="emoji">🏋️</span></div><div class="card-body"><div class="category">Fitness & lifestyle</div><h3>ZELUS Weighted Vest</h3><p>An adjustable weighted vest option for selected training routines.</p><a class="shop" href="https://www.amazon.com/s?k=ZELUS+weighted+vest&tag=trendora20205-20" target="_blank" rel="sponsored nofollow noopener">SHOP ON AMAZON <b>↗</b></a></div></article>
+</div>
+<div class="note"><b>Affiliate disclosure:</b> As an Amazon Associate I earn from qualifying purchases. TRENDORA may earn a commission from qualifying purchases at no extra cost to you. Product listings, prices and availability can change. This site uses Amazon search links with the Associates tracking ID supplied for this project; verify that the ID and links work in your Associates account before promoting.</div>
+</section>
+<section class="about-grid" id="about">
+<article class="about"><div class="kicker">OUR POINT OF VIEW</div><h3>Good finds, less scrolling.</h3><p>TRENDORA brings together useful and fun discoveries across beauty, home, technology, pets and fitness. We want finding your next favorite thing to feel easy, inspiring and enjoyable.</p></article>
+<article class="about" id="disclosure"><div class="kicker">SHOP WITH CLARITY</div><h3>Honest recommendations.</h3><p>We share product ideas to help you explore. Always review the seller, product details, customer feedback, shipping and return terms on Amazon before purchasing.</p></article>
+</section>
+</main>
+<footer><div class="foot"><div><div class="logo">TREN<span class="o">D</span>ORA</div><div class="tagline" style="color:#c7bfd3">TRENDING FINDS. EVERYDAY FAVORITES.</div></div><div><p>Product names and trademarks belong to their respective owners. TRENDORA is an independent product discovery website and is not affiliated with or endorsed by the brands shown.</p><small>© 2026 TRENDORA · Made for curious shoppers.</small></div></div></footer>
+<script>
+document.querySelectorAll('.filter').forEach(button=>button.addEventListener('click',()=>{
+ document.querySelectorAll('.filter').forEach(b=>b.classList.remove('active'));
+ button.classList.add('active');
+ const selected=button.dataset.filter;
+ document.querySelectorAll('.card').forEach(card=>card.classList.toggle('hidden',selected!=='all'&&card.dataset.cat!==selected));
+}));
+</script>
 </body>
 </html>
